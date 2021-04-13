@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+    <!-- actual used colors -->
+    <color name="primaryBlueColor">#0D1939</color>
+    <color name="secondaryBlueColor">#1B3372</color>
+    <color name="buttonColor">#805CFF</color>
+    <color name="textColor">#376CC0</color>
+    <color name="lineColor">#C8CE1F</color>
+    <color name="ratingBackColor">#8C000000</color>
+    <color name="bottomTabColor">#271665</color>
+    <color name="availableColor">#16A750</color>
+    <color name="unavailableColor">#707070</color>
+    <color name="errorColor">#FF0000</color>
+    <color name="errorFreeColor">#FFFFFF</color>
+    <color name="transparentWhiteColor">#80FFFFFF</color>
+    <color name="backButtonRippleColor">#66FFFFFF</color>
+    <color name="logOutColor">#FC4343</color>
+    <!-- tickets color   -->
+    <color name="showtimeAvailableColor">#18B853</color>
+    <color name="showtimeSellingFastColor">#DEAC49</color>
+    <color name="showtimeSoldOutColor">#FC4343</color>
+    <!-- review color -->
+    <color name="userReviewColor">#C8CE1F</color>
+
+    <!--Transparency level
+    100% — FF
+    95% — F2
+    90% — E6
+    85% — D9
+    80% — CC
+    75% — BF
+    70% — B3
+    65% — A6
+    60% — 99
+    55% — 8C
+    50% — 80
+    45% — 73
+    40% — 66
+    35% — 59
+    30% — 4D
+    25% — 40
+    20% — 33
+    15% — 26
+    10% — 1A
+    5% — 0D
+    0% — 00-->
+</resources>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- to change color of image (too many unnecessary files )-->
+<bitmap
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:src="@drawable/img_star"
+    android:tint="@color/userReviewColor"/>

@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primaryBlueColor"
+    tools:context=".ui.home.HomeFragment">
+
+    <!--  Top bar  -->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="10dp">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            app:cardCornerRadius="20dp"
+            android:layout_alignParentStart="true">
+            <ImageView
+                android:id="@+id/userProfileImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/img_user_profile" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            style="@style/LabelStyle"
+            android:id="@+id/textViewHomeTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Cinemax" />
+
+        <ImageView
+            android:id="@+id/homeNotificationImageView"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignParentEnd="true"
+            app:srcCompat="@drawable/ic_notification_white_24" />
+
+    </RelativeLayout>
+
+    <!-- Body   -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                style="@style/FieldLabelStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Lastest movies"
+                android:layout_marginBottom="5dp" />
+
+            <!-- shown as yellow line -->
+            <View
+                android:layout_width="91dp"
+                android:layout_height="4dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_line"
+                android:layout_gravity="center"/>
+
+            <!-- row 1  -->
+            <androidx.viewpager2.widget.ViewPager2
+                android:id="@+id/imageSliderViewPager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="80dp"
+                android:layout_marginBottom="10dp"/>
+
+            <com.google.android.material.tabs.TabLayout
+                android:id="@+id/imageSliderTabLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:tabBackground="@drawable/tab_selector"
+                app:tabGravity="center"
+                app:tabIndicatorHeight="0dp"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- row 2  -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp">
+                <TextView
+                    style="@style/FieldLabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Recommended for you"
+                    android:layout_marginBottom="5dp"
+                    android:layout_alignParentStart="true"/>
+                <ImageButton
+                    android:id="@+id/recommendationSettingsButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:background="@android:color/transparent"
+                    app:srcCompat="@drawable/ic_settings_blue"
+                    />
+            </RelativeLayout>
+            <!-- its a layout only to be shown as a line shape-->
+            <View
+                android:layout_width="91dp"
+                android:layout_height="4dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_line"
+                android:layout_marginHorizontal="16dp"/>
+            <TextView
+                android:id="@+id/noRecommendationsText"
+                style="@style/NotAvailableStyle"
+                android:visibility="gone"
+                android:textSize="20dp"
+                android:layout_gravity="center"
+                android:layout_margin="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="No recommendations available.
+                \nPlease review or favourite movies to get recommendations.
+                \nRecommendations will be updated daily."/>
+            <!-- show recommended movies -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/recommendedMovieRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="80dp"/>
+
+            <!-- row 3  -->
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="16dp">
+                <TextView
+                    style="@style/FieldLabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Showing now"
+                    android:layout_marginBottom="5dp"
+                    android:layout_alignParentStart="true" />
+                <TextView
+                    android:id="@+id/viewAllTextView"
+                    style="@style/FieldLabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/textColor"
+                    android:text="View all"
+                    android:layout_marginBottom="5dp"
+                    android:layout_alignParentEnd="true"/>
+            </RelativeLayout>
+            <!-- its a layout only to be shown as a line shape-->
+            <View
+                android:layout_width="91dp"
+                android:layout_height="4dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_line"
+                android:layout_marginHorizontal="16dp"/>
+            <!-- show available movies -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/showingMovieRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="80dp"
+                />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

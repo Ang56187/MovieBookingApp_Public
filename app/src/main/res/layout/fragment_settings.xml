@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Non padded layout-->
+<ScrollView android:layout_width="match_parent"
+    android:id="@+id/settingContainerScrollView"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.account.SettingsFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:orientation="vertical"
+        xmlns:tool="http://schemas.android.com/tool"
+        android:background="@color/primaryBlueColor"
+        android:paddingBottom="60dp"
+        tool:context=".ui.account.SettingFragment">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            android:orientation="horizontal">
+            <TextView
+                style="@style/LabelStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Settings"
+                android:layout_gravity="center"/>
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- Below the app bar  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp">
+            <!--  Section 1: notification setting  -->
+            <TextView
+                style="@style/FieldLabelStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notification"/>
+
+            <include android:id="@+id/notification_toggle"
+                layout="@layout/component_settings_toggle"/>
+
+            <!--  Section 2: movie recommendation setting  -->
+            <TextView
+                style="@style/FieldLabelStyle"
+                android:paddingTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Movie recommendation"/>
+            <TextView
+                style="@style/LongTextStyle"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Configure how movies will be recommended, recommendations will be updated daily"/>
+            <TextView
+                style="@style/EditTextStyle"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Decide what movies to show:"/>
+
+            <LinearLayout
+                android:padding="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity = "center"
+                android:orientation="vertical"
+                android:background="@drawable/rounded_rectangle">
+                <RadioGroup
+                    android:id="@+id/allowRadioGroup"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        style="@style/EditTextStyle"
+                        android:id="@+id/allowRadioButton"
+                        android:text="Allow movies not showing currently"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@android:color/white"/>
+                    <RadioButton
+                        style="@style/EditTextStyle"
+                        android:id="@+id/disallowRadioButton"
+                        android:text="Disallow movies not showing currently"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:buttonTint="@android:color/white"/>
+                </RadioGroup>
+            </LinearLayout>
+
+            <!-- Section 3: genre settings -->
+            <TextView
+                style="@style/FieldLabelStyle"
+                android:paddingTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Genre preferences"/>
+            <TextView
+                style="@style/LongTextStyle"
+                android:paddingBottom="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Set movie recommendations based on genre:
+                \n(note: movies from other genres will still appear,but genres selected will be more likely to appear)"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/genrePreferenceRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="10dp"
+                    android:background="@drawable/rounded_rectangle"
+                    android:orientation="vertical" />
+            </RelativeLayout>
+            
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

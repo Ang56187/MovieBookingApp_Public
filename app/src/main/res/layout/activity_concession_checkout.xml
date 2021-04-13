@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primaryBlueColor"
+    tool:context=".ui.concession.ConcessionCheckoutActivity">
+
+    <!--  Top app bar  -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/concessionCheckoutToolbar"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_transparency_updown"
+        android:orientation="horizontal"
+        android:translationZ="1dp"
+        android:paddingHorizontal="16dp">
+        <ImageButton
+            android:id="@+id/concessionCheckoutBackButton"
+            android:background="@drawable/back_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="start"
+            app:srcCompat="@drawable/img_back_30"/>
+        <TextView
+            android:id="@+id/concessionCheckoutTextView"
+            style="@style/LabelStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Checkout"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--  Body  -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp"
+        android:layout_below="@id/concessionCheckoutToolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--  For movie title (top of body)  -->
+            <TextView
+                style="@style/FieldLabelStyle"
+                android:id= "@+id/movieTitleTextView"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="Movie title"/>
+
+            <!--  For movie date and time (top of body)  -->
+            <TextView
+                style="@style/EditTextStyle"
+                android:id= "@+id/movieDateTimeTextView"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Day,Date,Time"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Section to show seats selected -->
+            <include
+                android:id="@+id/concessionListLayout"
+                layout="@layout/component_concession_list"
+                />
+
+            <!-- show payment options -->
+            <include
+                android:layout_gravity="center"
+                android:id="@+id/paymentOptionLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                layout = "@layout/component_payment_options"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <!--  Bottom bar  -->
+    <RelativeLayout
+        android:id="@+id/concessionCheckoutBottomRelativeLayout"
+        android:layout_alignParentBottom="true"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="10dp"
+        android:padding="10dp"
+        android:background="@drawable/unavailable_stroke"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            style="@style/FieldLabelStyle"
+            android:layout_centerInParent="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Proceed with payment"/>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            app:cardCornerRadius="15dp">
+            <ImageButton
+                android:id="@+id/concessionCheckoutForwardButton"
+                android:background="@color/unavailableColor"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/ic_forward"/>
+        </androidx.cardview.widget.CardView>
+    </RelativeLayout>
+
+
+</RelativeLayout>

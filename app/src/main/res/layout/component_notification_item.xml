@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="8dp"
+    android:orientation="vertical">
+
+    <TextView
+        style="@style/EditTextStyle"
+        android:id="@+id/notificationDescTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification not found" />
+
+    <TextView
+        style="@style/LongTextStyle"
+        android:id="@+id/notificationTimeTextView"
+        android:textColor="@color/unavailableColor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="0:00PM" />
+</LinearLayout>

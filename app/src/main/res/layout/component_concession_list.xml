@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Section to show seats selected -->
+<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingHorizontal="25dp"
+    android:layout_marginVertical="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- top line -->
+    <View
+        android:id="@+id/topLineView"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/rounded_line"
+        android:layout_gravity="center"/>
+
+    <!-- Center shows list of concessions booked -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/concessionCheckoutItemRecyclerView"
+        android:layout_below="@id/topLineView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/concessionCheckoutItemRecyclerView"
+        />
+
+    <!-- center line (just above total) -->
+    <View
+        android:id="@+id/centerLineView"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/rounded_line"
+        android:layout_below="@id/concessionCheckoutItemRecyclerView"/>
+
+    <!-- "Total" (bottom left of body) -->
+    <TextView
+        style="@style/FieldLabelStyle"
+        android:id="@+id/seatQuantityTextView"
+        android:layout_below="@id/centerLineView"
+        android:layout_alignParentStart="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Total"/>
+    <!-- total price (bottom right of body) -->
+    <TextView
+        style="@style/FieldLabelStyle"
+        android:id="@+id/totalConcessionPriceTextView"
+        android:layout_below="@id/centerLineView"
+        android:layout_alignParentEnd="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="RM0.00"/>
+    <!-- bottom line -->
+    <View
+        android:id="@+id/bottomLineView"
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_marginVertical="5dp"
+        android:background="@drawable/rounded_line"
+        android:layout_below="@id/totalConcessionPriceTextView"/>
+</RelativeLayout>

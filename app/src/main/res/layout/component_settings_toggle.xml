@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:id="@+id/toggle_relativelayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingVertical="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        style="@style/EditTextStyle"
+        android:id="@+id/settingToggleTextview"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:text="testing"
+        android:layout_alignParentStart="true"/>
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/settingToggleSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignParentEnd="true"
+        android:thumb="@drawable/thumb_selector"
+        app:track="@drawable/track_selector"
+        />
+</RelativeLayout>

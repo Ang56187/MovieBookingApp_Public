@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/primaryBlueColor">
+    <!-- For movie wallet -->
+    <RelativeLayout
+        android:layout_gravity="center"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="20dp"
+        android:padding="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_stroke_payment">
+        <TextView
+            style="@style/FieldLabelStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:text="Cinema Wallet"/>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/walletAmountCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:cardCornerRadius="10dp"
+            android:layout_toStartOf="@id/walletRadioButton">
+            <TextView
+                style="@style/EditTextStyle"
+                android:background="@color/secondaryBlueColor"
+                android:paddingVertical="3dp"
+                android:paddingHorizontal="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RM0.00"/>
+        </androidx.cardview.widget.CardView>
+        <RadioButton
+            android:id="@+id/walletRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="@android:color/white"
+            android:checked="true"
+            android:layout_alignParentEnd="true"/>
+    </RelativeLayout>
+
+
+    <!--  for credit card option  -->
+    <LinearLayout
+        android:id="@+id/creditCardLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/rounded_stroke_payment"
+        android:animateLayoutChanges="true"
+        android:layout_marginHorizontal="16dp"
+        android:padding="10dp"
+        android:layout_marginBottom="25dp">
+
+        <!-- For top section -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                style="@style/FieldLabelStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_alignParentStart="true"
+                android:text="Credit card"/>
+            <RadioButton
+                android:id="@+id/creditCardRadioButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:buttonTint="@android:color/white"
+                android:layout_alignParentEnd="true"/>
+        </RelativeLayout>
+
+        <!-- for input section (only shown when radio button selected) -->
+        <!-- card number section -->
+        <RelativeLayout
+            android:id="@+id/cardInputRelativeLayout"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+            <TextView
+                android:id="@+id/cardNoTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                style = "@style/FieldLabelStyle"
+                android:text="Card Number" />
+            <EditText
+                style = "@style/EditTextStyle"
+                android:id="@+id/cardNoEditText"
+                android:layout_below="@id/cardNoTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:layout_marginBottom="5dp"
+                android:backgroundTint="@android:color/white"
+                android:maxLength="19"
+                android:inputType="number"
+                android:digits="0123456789 "
+                android:hint="**** **** **** ****"
+                android:textColorHint="@color/transparentWhiteColor"
+                android:text="" />
+            <!-- For error message  -->
+            <TextView
+                android:id="@+id/cardNoErrorTextView"
+                android:layout_below="@id/cardNoEditText"
+                style="@style/LongTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColor="@color/errorColor"
+                android:layout_marginBottom="5dp"
+                android:text=""/>
+
+            <!-- expiry date section -->
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/cardNoErrorTextView">
+            <TextView
+                android:id="@+id/expiryDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                style = "@style/FieldLabelStyle"
+                android:text="Expiry date" />
+            <EditText
+                style = "@style/EditTextStyle"
+                android:id="@+id/expiryDateEditText"
+                android:layout_width="130dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/expiryDateTextView"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:backgroundTint="@android:color/white"
+                android:maxLength="5"
+                android:textColorHint="@color/transparentWhiteColor"
+                android:hint="MM/YY"
+                android:inputType="number"
+                android:text="" />
+            <!-- For error message  -->
+            <TextView
+                android:id="@+id/expiryDateErrorTextView"
+                android:layout_below="@id/expiryDateEditText"
+                style="@style/LongTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColor="@color/errorColor"
+                android:text=""/>
+            </RelativeLayout>
+
+            <!-- CVV section -->
+            <RelativeLayout
+                android:layout_alignParentEnd="true"
+                android:layout_below="@id/cardNoErrorTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/cvvTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="5dp"
+                    style = "@style/FieldLabelStyle"
+                    android:text="CVV" />
+                <EditText
+                    style = "@style/EditTextStyle"
+                    android:id="@+id/cvvEditText"
+                    android:layout_width="130dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvvTextView"
+                    android:layout_marginBottom="5dp"
+                    android:ems="10"
+                    android:backgroundTint="@android:color/white"
+                    android:inputType="number"
+                    android:maxLength="3"
+                    android:text="" />
+                <!-- For error message  -->
+                <TextView
+                    android:id="@+id/cvvErrorTextView"
+                    android:layout_below="@id/cvvEditText"
+                    style="@style/LongTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:textColor="@color/errorColor"
+                    android:text=""/>
+            </RelativeLayout><!-- end CVV part -->
+        </RelativeLayout><!-- end input part of credit card -->
+    </LinearLayout> <!-- end credit card part -->
+
+</LinearLayout>
+

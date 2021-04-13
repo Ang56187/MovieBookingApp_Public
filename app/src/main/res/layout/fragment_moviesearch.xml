@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Non padded layout-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/searchContainerLinearLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    xmlns:tool="http://schemas.android.com/tool"
+    android:background="@color/primaryBlueColor"
+    android:paddingBottom="60dp"
+    tools:context=".ui.movie.MovieSearchFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal" >
+        <TextView
+            style="@style/LabelStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Movie search"
+            android:layout_gravity="center"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Overall layout , after the top bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="16dp">
+        <!--  first row (search and filter)  -->
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp">
+
+            <!--  Search bar first  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/rounded_rectangle">
+                    <EditText
+                        style = "@style/EditTextStyle"
+                        android:id="@+id/searchMovieEditText"
+                        android:layout_width="0dp"
+                        android:layout_height="40dp"
+                        android:layout_weight="1"
+                        android:ems="10"
+                        android:background="@drawable/rounded_rectangle"
+                        android:inputType="text"
+                        android:layout_marginHorizontal="10dp"
+                        android:paddingStart="5dp"
+                        android:text="" />
+                    <ImageButton
+                        android:id="@+id/searchMovieButton"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginHorizontal="7dp"
+                        android:layout_gravity="center_vertical"
+                        android:backgroundTint="@android:color/transparent"
+                        app:srcCompat="@drawable/ic_search"/>
+                </LinearLayout>
+                <!-- Filter button  -->
+                <ImageButton
+                    android:id="@+id/filterMovieButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="5dp"
+                    android:layout_marginHorizontal="5dp"
+                    android:background="@drawable/rounded_button"
+                    app:srcCompat="@drawable/ic_filter"
+                    android:layout_alignParentEnd="true"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--  second row(showing now and coming soon)   -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/showingNowButton"
+                style="@style/ButtonLabelStyle"
+                android:textSize="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_alignParentStart="true"
+                android:text="Showing now"/>
+
+            <Button
+                android:id="@+id/comingSoonButton"
+                style="@style/ButtonLabelStyle"
+                android:textSize="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_centerInParent="true"
+                android:text="Coming soon"/>
+
+
+            <Button
+                android:id="@+id/notShowingButton"
+                style="@style/ButtonLabelStyle"
+                android:textSize="14dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:layout_alignParentEnd="true"
+                android:text="Not showing"/>
+
+        </RelativeLayout>
+
+        <!-- Third row: recycler view with movies shown  -->
+        <ScrollView
+            android:id="@+id/movieSearchScrollView"
+            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/movieSearchRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</LinearLayout>

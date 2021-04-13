@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:id="@+id/moviePosterLinearLayout"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="20dp"
+    android:orientation="vertical">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp"
+        android:layout_marginHorizontal="4dp">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center">
+
+            <!-- Top corner -->
+            <ImageButton
+                android:id="@+id/favouriteButton"
+                android:visibility="gone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                app:srcCompat="@drawable/ic_star"
+                android:background="@android:color/transparent"
+                android:translationZ="1dp"
+                android:layout_alignEnd="@id/posterImageView" />
+
+            <!--  poster image  -->
+            <ImageView
+                android:id="@+id/posterImageView"
+                android:layout_width="118dp"
+                android:layout_height="165dp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/img_no_img"/>
+
+            <!-- movie rating section  -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_rating_back"
+                android:orientation="horizontal"
+                android:layout_alignBottom = "@id/posterImageView"
+                android:layout_alignLeft="@id/posterImageView"
+                android:layout_margin="5dp"
+                android:padding="5dp">
+                <ImageView
+                    android:layout_width="13dp"
+                    android:layout_height="13dp"
+                    android:layout_marginRight="2dp"
+                    app:srcCompat="@drawable/ic_star" />
+                <TextView
+                    android:id="@+id/ratingScoreTextView"
+                    style="@style/FieldLabelStyle"
+                    android:textSize="11dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="0" />
+                <TextView
+                    android:id="@+id/ratingNumTextView"
+                    style="@style/FieldLabelStyle"
+                    android:textSize="9dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(0)" />
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <!--  Movie title (bottom)  -->
+    <TextView
+        android:id="@+id/movieTitleTextView"
+        style="@style/EditTextStyle"
+        android:textSize="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:maxLines="3"
+        android:ellipsize="end"
+        android:text="Movie title"/>
+</LinearLayout>
+

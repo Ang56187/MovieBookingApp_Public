@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="@color/primaryBlueColor"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tool:context=".ui.account.ProfileActivity">
+
+    <!--  Top app bar  -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/userProfileToolbar"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="16dp"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/profileBackButton"
+            android:background="@drawable/back_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="start"
+            app:srcCompat="@drawable/img_back_30"/>
+
+        <RelativeLayout
+            android:id="@+id/logOutRelativeLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rounded_button_logout"
+            android:paddingVertical="5dp"
+            android:paddingHorizontal="10dp"
+            android:layout_gravity="right">
+            <TextView
+                android:id="@+id/logOutTextView"
+                style="@style/ButtonLabelStyle"
+                android:textSize="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Log Out"/>
+            <ImageView
+                android:layout_toEndOf="@id/logOutTextView"
+                android:layout_marginStart="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/ic_logout"/>
+        </RelativeLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        android:layout_below="@id/userProfileToolbar">
+
+        <!-- For image -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/userProfileCardView"
+            android:layout_width="130dp"
+            android:layout_height="130dp"
+            app:cardCornerRadius="65dp"
+            android:layout_alignParentStart="true">
+            <ImageView
+                android:id="@+id/userProfileImageView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/img_user_profile" />
+        </androidx.cardview.widget.CardView>
+        <ImageButton
+            android:id="@+id/editUserProfileImageButton"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:elevation="2dp"
+            android:layout_alignBottom="@id/userProfileCardView"
+            android:layout_alignEnd="@id/userProfileCardView"
+            app:srcCompat="@drawable/ic_edit"
+            android:background="@drawable/rounded_button"/>
+
+        <!-- show name and wallet (right of user image) -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="10dp"
+            android:orientation="vertical"
+            android:layout_toEndOf="@id/userProfileCardView">
+            <TextView
+                android:id="@+id/userNameTextView"
+                style="@style/FieldLabelStyle"
+                android:layout_width="170dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_height="wrap_content"
+                android:text="No name"/>
+            <!-- shown as yellow line -->
+            <View
+                android:layout_width="70dp"
+                android:layout_height="4dp"
+                android:layout_marginVertical="5dp"
+                android:background="@drawable/rounded_line"/>
+
+            <TextView
+                style="@style/FieldLabelStyle"
+                android:layout_width="170dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_height="wrap_content"
+                android:text="Wallet"/>
+            <TextView
+                android:id="@+id/walletTextView"
+                style="@style/EditTextStyle"
+                android:layout_width="170dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:layout_height="wrap_content"
+                android:text="RM0.00"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_below="@id/userProfileCardView"
+        android:paddingHorizontal="16dp"
+        android:layout_marginVertical="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/topUpWalletTextView"
+            style="@style/ButtonLabelStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="5dp"
+            android:background="@drawable/rounded_stroke_white"
+            android:text="Top up wallet"/>
+        <TextView
+            android:id="@+id/editProfileTextView"
+            style="@style/ButtonLabelStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:paddingHorizontal="20dp"
+            android:paddingVertical="5dp"
+            android:background="@drawable/rounded_stroke_white"
+            android:text="Edit profile"/>
+    </RelativeLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/profileTabLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:tabTextColor="#FFFFFF"
+        app:tabTextAppearance="@style/TabLayoutStyle"
+        app:tabIndicatorColor="@color/lineColor"
+        android:layout_marginBottom="10dp">
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/watchHistoryTabItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Watch history"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/favouritesTabItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Favourites"/>
+
+        <com.google.android.material.tabs.TabItem
+            android:id="@+id/reviewedTabItem"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Reviewed"/>
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/profileViewPager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        />
+
+</LinearLayout>

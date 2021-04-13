@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Non padded layout-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:tool="http://schemas.android.com/tool"
+    android:background="@color/primaryBlueColor">
+
+
+    <androidx.appcompat.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/signUpToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:paddingHorizontal="1dp"
+        android:paddingVertical="1dp">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/signUpTextView"
+                style="@style/LabelStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0"
+                android:layout_gravity="center"
+                android:layout_marginBottom="5dp"
+                android:text="Sign up" />
+            <!-- its a layout only to be shown as a line shape-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="91dp"
+                android:layout_height="4dp"
+                android:layout_gravity="center"
+                android:background="@drawable/rounded_line" />
+        </LinearLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--  padded layout  -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingVertical="10dp">
+
+            <!-- name field -->
+            <TextView
+                android:id="@+id/textViewNameSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                style = "@style/FieldLabelStyle"
+                android:text="Name" />
+
+            <EditText
+                style = "@style/EditTextStyle"
+                android:id="@+id/nameEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:backgroundTint="@android:color/white"
+                android:inputType="textPersonName"
+                android:text="" />
+            <!-- For error message  -->
+            <TextView
+                android:id="@+id/nameErrorTextView"
+                style="@style/LongTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColor="@color/errorColor"
+                android:layout_marginBottom="5dp"
+                android:text=""/>
+
+            <TextView
+                android:id="@+id/birthDateTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                style = "@style/FieldLabelStyle"
+                android:text="Birth date" />
+            <Button
+                style = "@style/ButtonLabelStyle"
+                android:id = "@+id/birthDatePickerButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="get date"
+                android:paddingHorizontal="10dp"
+                android:background="@drawable/rounded_button"
+                android:layout_marginBottom="10dp" />
+
+            <!-- For error message  -->
+            <TextView
+                android:id="@+id/dateErrorTextView"
+                style="@style/LongTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColor="@color/errorColor"
+                android:layout_marginBottom="10dp"
+                android:text=""/>
+
+            <!-- For gender -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                style = "@style/FieldLabelStyle"
+                android:text="Gender" />
+
+            <RadioGroup
+                android:id="@+id/genderRadioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:orientation="horizontal">
+                <RadioButton
+                    style="@style/EditTextStyle"
+                    android:id="@+id/maleRadioButton"
+                    android:buttonTint="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="10dp"
+                    android:text="male"/>
+                <RadioButton
+                    style="@style/EditTextStyle"
+                    android:id="@+id/femaleRadioButton"
+                    android:buttonTint="@android:color/white"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="female"/>
+            </RadioGroup>
+
+            <!-- email field -->
+            <TextView
+                android:id="@+id/emailSignUpTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                style = "@style/FieldLabelStyle"
+                android:text="Email" />
+            <EditText
+                style = "@style/EditTextStyle"
+                android:id="@+id/emailEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:backgroundTint="@android:color/white"
+                android:inputType="textEmailAddress"
+                android:text="" />
+            <!-- For error message  -->
+            <TextView
+                android:id="@+id/emailErrorTextView"
+                style="@style/LongTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColor="@color/errorColor"
+                android:layout_marginBottom="5dp"
+                android:text=""/>
+
+            <!-- phone no field -->
+            <TextView
+                android:id="@+id/textViewPhoneNoSignUp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                style = "@style/FieldLabelStyle"
+                android:text="Phone number" />
+
+            <EditText
+                style = "@style/EditTextStyle"
+                android:id="@+id/phoneNoEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:backgroundTint="@android:color/white"
+                android:digits="0123456789-"
+                android:inputType="phone"
+                android:text="" />
+            <!-- For error message  -->
+            <TextView
+                android:id="@+id/phoneErrorTextView"
+                style="@style/LongTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColor="@color/errorColor"
+                android:layout_marginBottom="5dp"
+                android:text=""/>
+
+            <!-- password field  -->
+            <TextView
+                android:id="@+id/passTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                style = "@style/FieldLabelStyle"
+                android:text="Password" />
+
+            <EditText
+                style = "@style/EditTextStyle"
+                android:id="@+id/passEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:backgroundTint="@android:color/white"
+                android:inputType="textPassword" />
+            <!-- For error message  -->
+            <TextView
+                android:id="@+id/passErrorTextView"
+                style="@style/LongTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColor="@color/errorColor"
+                android:layout_marginBottom="5dp"
+                android:text=""/>
+
+            <!-- confirm password field  -->
+            <TextView
+                android:id="@+id/confirmPassTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                style = "@style/FieldLabelStyle"
+                android:text="Confirm password" />
+
+            <EditText
+                style = "@style/EditTextStyle"
+                android:id="@+id/confirmPassEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:ems="10"
+                android:backgroundTint="@android:color/white"
+                android:inputType="textPassword" />
+            <!-- For error message  -->
+            <TextView
+                android:id="@+id/confirmPassErrorTextView"
+                style="@style/LongTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:textColor="@color/errorColor"
+                android:layout_marginBottom="10dp"
+                android:text=""/>
+
+            <Button
+                android:id="@+id/signUpButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"
+                android:background="@drawable/rounded_button"
+                style = "@style/ButtonLabelStyle"
+                android:text="Sign up" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

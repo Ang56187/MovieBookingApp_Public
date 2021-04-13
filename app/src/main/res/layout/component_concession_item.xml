@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_marginVertical="10dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/rounded_rectangle"
+    android:orientation="horizontal">
+
+    <!-- Image of concession (left) -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp">
+        <ImageView
+            android:id="@+id/concessionImageView"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/img_no_img"/>
+    </androidx.cardview.widget.CardView>
+
+    <!-- details of snack (name and price)(right) -->
+    <LinearLayout
+        android:paddingLeft="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:id="@+id/concessionNameTextView"
+            style="@style/FieldLabelStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:text="Name"/>
+        <TextView
+            android:id="@+id/concessionPriceTextView"
+            style="@style/EditTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:text="RM0"/>
+
+        <!--  Item qty (bottom right)  -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+                <ImageButton
+                    android:id="@+id/reduceConcessionQtyButton"
+                    android:background="@drawable/rounded_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_marginRight="10dp"
+                    app:srcCompat="@drawable/ic_minus"/>
+                <TextView
+                    android:id="@+id/concessionQtyTextView"
+                    style="@style/EditTextStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center"
+                    android:text="x 0"/>
+                <ImageButton
+                    android:id="@+id/addConcessionQtyButton"
+                    android:background="@drawable/rounded_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:layout_marginRight="10dp"
+                    app:srcCompat="@drawable/ic_plus"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

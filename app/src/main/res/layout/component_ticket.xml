@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ticketRelativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp"
+    android:layout_marginVertical="10dp"
+    android:background="@drawable/rounded_button">
+
+    <!-- For poster image (left) remmember poster size -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="20dp">
+        <ImageView
+            android:id="@+id/ticketMoviePosterImageView"
+            android:layout_width="95dp"
+            android:layout_height="147dp"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/img_no_img"/>
+    </androidx.cardview.widget.CardView>
+
+    <!-- For ticket info (center) -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingLeft="110dp"
+        android:layout_alignParentTop="true">
+
+        <!-- For ticket status (top right) -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/ticketStatusCardView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:backgroundTint="@color/availableColor"
+            app:cardCornerRadius="7dp">
+            <TextView
+                android:id="@+id/ticketStatusTextView"
+                style="@style/EditTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:paddingHorizontal="10dp"
+                android:text="Active" />
+        </androidx.cardview.widget.CardView>
+
+
+        <!-- Movie title and date section -->
+        <TextView
+            android:id="@+id/ticketMovieTitleTextView"
+            style="@style/FieldLabelStyle"
+            android:layout_width="170dp"
+            android:maxLines="2"
+            android:ellipsize="end"
+            android:layout_height="wrap_content"
+            android:text="Movie title"/>
+        <TextView
+            android:id="@+id/ticketDateTextView"
+            style="@style/EditTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fri, 22 June 2020, 6:13 PM"/>
+
+        <!-- Seats section -->
+<!--        <TextView-->
+<!--            style="@style/FieldLabelStyle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="Seats"/>-->
+<!--        <TextView-->
+<!--            android:id="@+id/ticketSeatsTextView"-->
+<!--            style="@style/EditTextStyle"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="L-10,L-11"/>-->
+
+        <!-- Hall section -->
+        <TextView
+            style="@style/FieldLabelStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hall"/>
+        <TextView
+            android:id="@+id/ticketHallTextView"
+            style="@style/EditTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hall A"/>
+    </LinearLayout>
+
+    <RadioButton
+        android:id="@+id/ticketSelectRadioButton"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:buttonTint="@android:color/white"
+        android:layout_alignParentEnd="true"/>
+
+    <!--  Creted purely for debugggin  -->
+    <ImageButton
+        android:id="@+id/deleteTicketButton"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_delete"
+        android:background="@android:color/transparent"
+        android:layout_alignParentEnd="true"/>
+
+
+</RelativeLayout>

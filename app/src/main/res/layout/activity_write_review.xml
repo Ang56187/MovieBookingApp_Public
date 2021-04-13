@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    android:id="@+id/writeReviewRelativeLayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryBlueColor"
+    tools:context=".ui.movie.WriteReviewActivity">
+
+    <!--  Top app bar  -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/writeReviewToolbar"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/writeReviewBackButton"
+            android:background="@drawable/back_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="start"
+            app:srcCompat="@drawable/img_back_30"/>
+        <TextView
+            style="@style/LabelStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Write Review"
+            android:layout_gravity="center"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Includes ratingbar and edittext (body) -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/writeReviewToolbar">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:orientation="vertical">
+
+            <!-- User rating -->
+            <TextView
+                style="@style/FieldLabelStyle"
+                android:layout_gravity="center"
+                android:layout_marginTop="40dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Rate this movie"/>
+
+            <!-- movie title -->
+            <TextView
+                android:id="@id/movieTitleTextView"
+                style="@style/EditTextStyle"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="Movie Title"/>
+
+            <TextView
+                android:id="@+id/ratingScoreTextView"
+                style="@style/EditTextStyle"
+                android:layout_gravity="center"
+                android:textSize="100dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="0.0"/>
+            <RatingBar
+                android:id="@+id/movieRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:isIndicator="false"
+                android:numStars="5"
+                android:progressDrawable="@drawable/custom_ratingbar"
+                android:rating="1"
+                android:max="5"/>
+
+            <!-- written review -->
+            <TextView
+                style="@style/FieldLabelStyle"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:text="Write your opinion (optional)"/>
+            <EditText
+                android:id="@+id/writeReviewEditText"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textMultiLine"
+                android:padding="10dp"
+                android:layout_marginBottom="80dp"
+                android:text=""
+                android:hint="write your review here"
+                android:textColorHint="@color/transparentWhiteColor"
+                android:background="@drawable/rounded_edittext"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/postReviewButton"
+        style = "@style/ButtonLabelStyle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_button"
+        android:layout_marginHorizontal="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"
+        android:text="Post"/>
+
+
+</RelativeLayout>

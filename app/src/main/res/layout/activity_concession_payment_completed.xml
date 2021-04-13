@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tool="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primaryBlueColor"
+    tool:context=".ui.concession.ConcessionPaymentCompletedActivity">
+
+    <!--  Top app bar  -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/concessionPaymentCompletedToolbar"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient_transparency_updown"
+        android:orientation="horizontal"
+        android:translationZ="1dp"
+        android:paddingHorizontal="16dp">
+        <TextView
+            android:id="@+id/concessionPaymentCompletedTextView"
+            style="@style/LabelStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Payment completed"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!--  Body  -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp"
+        android:layout_below="@id/concessionPaymentCompletedToolbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <!--  For movie title (top of body)  -->
+            <TextView
+                style="@style/FieldLabelStyle"
+                android:id= "@+id/movieTitleTextView"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="16dp"
+                android:maxLines="2"
+                android:ellipsize="end"
+                android:text="Movie title"/>
+
+            <!--  For movie date and time (top of body)  -->
+            <TextView
+                style="@style/EditTextStyle"
+                android:id= "@+id/movieDateTimeTextView"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Day,Date,Time"
+                android:layout_marginBottom="10dp"/>
+
+            <!-- Section to show concessions selected -->
+            <include
+                android:id="@+id/concessionListLayout"
+                layout="@layout/component_concession_list"
+                />
+        </LinearLayout>
+    </ScrollView>
+
+    <!--  Bottom bar  -->
+    <Button
+        android:layout_alignParentBottom="true"
+        android:id="@+id/backToHomeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Back to home"
+        style = "@style/ButtonLabelStyle"
+        android:background="@drawable/rounded_button"/>
+
+</RelativeLayout>

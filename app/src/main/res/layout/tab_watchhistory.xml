@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    android:id="@+id/userMovieScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout
+            android:id="@+id/watchHistoryLinearLayout"
+            android:descendantFocusability="blocksDescendants"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:orientation="vertical">
+            <!-- show currently booked -->
+            <TextView
+                style="@style/FieldLabelStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="currently booked"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="5dp"
+                android:paddingHorizontal="16dp"
+                android:layout_alignParentStart="true"/>
+            <!-- its a layout only to be shown as a line shape-->
+            <View
+                android:layout_width="91dp"
+                android:layout_height="4dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_line"
+                android:layout_marginHorizontal="16dp"/>
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/currentlyBookedRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="80dp"/>
+
+            <!-- show currently booked -->
+            <TextView
+                style="@style/FieldLabelStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Last seen"
+                android:layout_marginBottom="5dp"
+                android:paddingHorizontal="16dp"
+                android:layout_alignParentStart="true"/>
+            <!-- its a layout only to be shown as a line shape-->
+            <View
+                android:layout_width="91dp"
+                android:layout_height="4dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/rounded_line"
+                android:layout_marginHorizontal="16dp"/>
+            <!-- show recommended movies -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lastSeenRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="80dp"/>
+        </LinearLayout>
+</androidx.core.widget.NestedScrollView>

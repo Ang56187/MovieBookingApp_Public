@@ -1,0 +1,94 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+<!--        <item name="colorPrimary">@color/colorPrimary</item>-->
+<!--        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>-->
+<!--        <item name="colorAccent">@color/colorAccent</item>-->
+
+        <item name="colorPrimary">@color/buttonColor</item>
+        <item name="colorPrimaryDark">@color/textColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="LabelStyle">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">27dp</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="FieldLabelStyle">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="NotAvailableStyle">
+        <item name="android:textColor">#80FFFFFF</item>
+        <item name="android:textSize">25dp</item>
+        <item name="android:fontFamily">@font/roboto_light</item>
+    </style>
+
+    <style name="EditTextStyle">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">18dp</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="LongTextStyle">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">15dp</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="RevenueTextStyle">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">12dp</item>
+        <item name="android:fontFamily">@font/roboto</item>
+    </style>
+
+    <style name="ButtonLabelStyle">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">20dp</item>
+        <item name="android:fontFamily">@font/roboto_light</item>
+    </style>
+
+    <style name="ToolbarTheme" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
+
+    <style name="RatingBar" parent="android:style/Widget.RatingBar">
+        <item name="colorControlNormal">#FFFFFF</item>
+        <item name="colorControlActivated">#FFFFFF</item>
+    </style>
+
+    <style name="MyDatePickerTheme" parent="AppTheme">
+        <item name="colorAccent">@color/primaryBlueColor</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+
+    <style name="datepicker" parent="Theme.AppCompat.Light.Dialog">
+        <!-- Put the two options, colorAccent and android:colorAccent. -->
+        <item name="colorAccent">@color/secondaryBlueColor</item>
+        <item name="android:colorPrimary">@color/secondaryBlueColor</item>
+    </style>
+
+    <style name="TabLayoutStyle" parent="TextAppearance.Design.Tab">
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:textSize">13dp</item>
+        <item name="android:fontFamily">@font/roboto_light</item>
+    </style>
+
+
+</resources>

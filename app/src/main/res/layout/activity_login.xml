@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@color/primaryBlueColor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_rectangle"
+        android:orientation="vertical"
+        android:layout_gravity = "center"
+        android:paddingHorizontal="16dp"
+        android:layout_marginHorizontal="16dp"
+        android:paddingVertical="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/singInTextView"
+            style="@style/LabelStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:text="Sign in" />
+
+        <!-- its a layout only to be shown as a line shape-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="91dp"
+            android:layout_height="4dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rounded_line"/>
+
+        <TextView
+            android:id="@+id/signInEmailTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            style = "@style/FieldLabelStyle"
+            android:text="Email" />
+
+        <EditText
+            style = "@style/EditTextStyle"
+            android:id="@+id/signInEmailEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:backgroundTint="@android:color/white"
+            android:inputType="textPersonName"
+            android:text="" />
+        <!-- For error message  -->
+        <TextView
+            android:id="@+id/emailErrorTextView"
+            style="@style/LongTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:textColor="@color/errorColor"
+            android:layout_marginBottom="5dp"
+            android:text=""/>
+
+        <TextView
+            android:id="@+id/signInPassTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            style = "@style/FieldLabelStyle"
+            android:text="Password" />
+
+        <EditText
+            style = "@style/EditTextStyle"
+            android:id="@+id/signInPassEditText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:ems="10"
+            android:backgroundTint="@android:color/white"
+            android:inputType="textPassword" />
+        <!-- For error message  -->
+        <TextView
+            android:id="@+id/passErrorTextView"
+            style="@style/LongTextStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            android:textColor="@color/errorColor"
+            android:layout_marginBottom="5dp"
+            android:text=""/>
+
+        <Button
+            android:id="@+id/signInButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/rounded_button"
+            style = "@style/ButtonLabelStyle"
+            android:text="Login" />
+
+        <TextView
+            android:id="@+id/orTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:textColor = "@android:color/white"
+            android:textSize= "18dp"
+            android:fontFamily="@font/roboto"
+            android:text="or" />
+
+        <Button
+            android:id="@+id/goToSignUpButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/rounded_button"
+            style = "@style/ButtonLabelStyle"
+            android:text="Sign up" />
+
+        <!-- layout to combine non tapable and tapable text-->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="29dp"
+            android:layout_gravity="center"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/forgotPassTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto"
+                android:text="Forgot your password?"
+                android:clickable="true"
+                android:textColor="@color/textColor"
+                android:textSize="15dp" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

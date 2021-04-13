@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/primaryBlueColor"
+    tools:context=".ui.movie.MoviePaymentCompletedActivity">
+
+    <!--  Top app bar  -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/moviePaymentCompletedToolbar"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal"
+        android:paddingVertical="13dp" >
+        <TextView
+            style="@style/LabelStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Payment completed"
+            android:layout_gravity="center"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Includes ticket movie detail -->
+    <ScrollView
+        android:layout_below="@id/moviePaymentCompletedToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:paddingBottom="80dp"
+            android:orientation="vertical">
+            <!-- Detail on booked movie -->
+            <include
+                android:id="@+id/component_ticket_detail"
+                layout="@layout/component_ticket_detail"/>
+
+            <include
+                android:id="@+id/concessionListLayout"
+                android:visibility="gone"
+                layout="@layout/component_concession_list"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/backToHomeButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_alignParentBottom="true"
+        android:text="Back to home"
+        style = "@style/ButtonLabelStyle"
+        android:background="@drawable/rounded_button"/>
+
+</RelativeLayout>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "206568275592",
+    "firebase_url": "https://moviebookingapp-4414b.firebaseio.com",
+    "project_id": "moviebookingapp-4414b",
+    "storage_bucket": "moviebookingapp-4414b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:206568275592:android:2deba7f36f29877a61293d",
+        "android_client_info": {
+          "package_name": "com.project.moviebookingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "206568275592-rae1niqdl5ms3rtuuq95c5g0u85856r2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDNGyuypia3_d1oA3DpV8ttAYpwovQV8vY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "206568275592-rae1niqdl5ms3rtuuq95c5g0u85856r2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

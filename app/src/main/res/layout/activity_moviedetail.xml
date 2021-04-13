@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Overall page-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tool="http://schemas.android.com/tools"
+    tool:context=".ui.movie.MovieDetailActivity"
+    android:background="@color/primaryBlueColor">
+    <!--  Where all components fit into -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <!--  Top app bar  -->
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/movieDetailToolbar"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/gradient_transparency_updown"
+                android:orientation="horizontal"
+                android:translationZ="1dp"
+                android:paddingHorizontal="16dp">
+                <ImageButton
+                    android:id="@+id/movieDetailBackButton"
+                    android:background="@drawable/back_button"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="start"
+                    app:srcCompat="@drawable/img_back_30"/>
+                <ImageButton
+                    android:id="@+id/movieDetailFavouriteButton"
+                    android:backgroundTint="@android:color/transparent"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="end"
+                    app:srcCompat="@drawable/ic_star_unfill"/>
+            </androidx.appcompat.widget.Toolbar>
+
+            <!-- Show image of picture -->
+            <ImageView
+                android:id="@+id/movieDetailImageView"
+                android:layout_width="match_parent"
+                android:layout_height="350dp"
+                android:scaleType="centerCrop"
+                android:layout_alignParentTop="true"
+                app:srcCompat="@drawable/img_no_img_square" />
+            <!--  Play button icon  -->
+            <ImageButton
+                android:id="@+id/movieDetailPlayButton"
+                android:background="@android:color/transparent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:translationZ="1dp"
+                app:srcCompat="@drawable/ic_play_circle"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/gradient_transparency_downup"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:orientation="vertical"
+                >
+                <TextView
+                    style="@style/LabelStyle"
+                    android:id="@+id/movieTitleTextView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingHorizontal="16dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Movie title"/>
+                <!-- its a layout only to be shown as a line shape-->
+                <View
+                    android:layout_width="91dp"
+                    android:layout_height="4dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/rounded_line"
+                    android:layout_marginHorizontal="16dp"/>
+            </LinearLayout>
+        </RelativeLayout>
+
+        <!-- Body -->
+        <LinearLayout
+            android:id="@+id/movieBodyLinearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+            <TextView
+                style="@style/EditTextStyle"
+                android:id="@+id/movieActorTextView"
+                android:paddingHorizontal="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="Starring: actors"/>
+            <TextView
+                style="@style/EditTextStyle"
+                android:id="@+id/movieGenreTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Insert genre here"/>
+            <TextView
+                style="@style/EditTextStyle"
+                android:id="@+id/movieDurationTextView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Insert duration here"/>
+
+            <!-- For rating section -->
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:layout_margin="5dp"
+                android:background="@drawable/rounded_rating_back">
+                <TextView
+                    android:id="@+id/ratingScoreTextView"
+                    style="@style/FieldLabelStyle"
+                    android:layout_gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="3dp"
+                    android:text="0.00" />
+
+                <RatingBar
+                    android:id="@+id/movieRatingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:isIndicator="true"
+                    android:numStars="5"
+                    android:stepSize="0.5"
+                    android:progressBackgroundTint="#33FFFFFF"
+                    android:progressTint="#FFFFFF"
+                    android:rating="0"
+                    android:scaleX=".7"
+                    android:scaleY=".7"
+                    android:transformPivotX="0dp"
+                    android:transformPivotY="0dp"
+                    android:layout_marginBottom="-26dp"
+                    android:layout_marginRight="-65dp"
+                    android:max="5"/>
+                <TextView
+                    android:id="@+id/ratingNumTextView"
+                    style="@style/FieldLabelStyle"
+                    android:textSize="15dp"
+                    android:layout_gravity="bottom"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(0)" />
+            </LinearLayout>
+
+            <!-- For synopsis section -->
+            <LinearLayout
+                android:id="@+id/synopsisLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="16dp"
+                android:animateLayoutChanges="true"
+                android:layout_gravity="center"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="16dp">
+                <TextView
+                    android:id="@+id/synopsisTitleTextView"
+                    style="@style/FieldLabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Plot synopsis"/>
+                <ImageView
+                    android:id="@+id/synopsisArrowButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="center"
+                    app:srcCompat="@drawable/ic_down"/>
+            <TextView
+                android:id="@+id/synopsisTextView"
+                style="@style/LongTextStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:text="Baby is a young getaway driver, contracted to a master-criminal, Doc. Doc's specialty is armed robberies - he puts together teams for each heist, with Baby being the only constant. Baby completes his last job for Doc and is now free. He sets about leading a normal life, getting a legitimate job and starting a relationship (with Debora). However, Doc views Baby as a sort of good luck charm, and, using threats of violence, pulls him back into the criminal world. With a particular job in mind, Doc assembles his team. However, the other individuals are incompatible with each other, if not psychotic, and soon not only is Baby's life at risk but also Debora's."/>
+            </LinearLayout>
+            <!--  layout for plot synopsis section  -->
+
+            <!-- For showtimes section -->
+            <!--  show date  -->
+            <LinearLayout
+                android:id="@+id/secondHalfBodyLinearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:animateLayoutChanges="true"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/showtimeTextView"
+                    style="@style/FieldLabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="16dp"
+                    android:text="Showtimes"/>
+                <View
+                    android:layout_width="91dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_line"
+                    android:layout_marginHorizontal="16dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/movieDateRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginVertical="15dp"/>
+
+                <!-- No showtimes of movie (if dont have) -->
+                <TextView
+                    android:id="@+id/noShowtimesTextView"
+                    style="@style/NotAvailableStyle"
+                    android:visibility="gone"
+                    android:layout_gravity="center"
+                    android:layout_margin="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No showtimes available"/>
+
+                <!--  show  time availability -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginHorizontal="16dp">
+                    <!--  Available   -->
+                    <View
+                        android:background="@color/showtimeAvailableColor"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_gravity="center" />
+                    <TextView
+                        style="@style/EditTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="15dp"
+                        android:textColor="@color/showtimeAvailableColor"
+                        android:text="Available"/>
+                    <!--  Selling fast   -->
+                    <View
+                        android:background="@color/showtimeSellingFastColor"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        style="@style/EditTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="15dp"
+                        android:textColor="@color/showtimeSellingFastColor"
+                        android:text="Selling fast"/>
+                    <!--  Sold out   -->
+                    <View
+                        android:background="@color/showtimeSoldOutColor"
+                        android:layout_width="10dp"
+                        android:layout_height="10dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_gravity="center"/>
+                    <TextView
+                        style="@style/EditTextStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:textSize="15dp"
+                        android:textColor="@color/showtimeSoldOutColor"
+                        android:text="Sold out"/>
+                </LinearLayout>
+
+                <!-- Show all showtimes by the date -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    >
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/movieTimeRecyclerView"/>
+                </RelativeLayout>
+
+                <!-- Review section (only appear if have review) -->
+                <RelativeLayout
+                    android:id="@+id/reviewTitleRelativeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="16dp">
+                    <!-- Title of section -->
+                    <TextView
+                        android:id="@+id/userReviewTextView"
+                        style="@style/FieldLabelStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:text="User review"/>
+                    <!-- Clickable text to read all reviews -->
+                    <TextView
+                        android:id="@+id/allReviewsTextView"
+                        style="@style/FieldLabelStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentEnd="true"
+                        android:textColor="@color/textColor"
+                        android:textSize="18dp"
+                        android:text="View all reviews"/>
+                </RelativeLayout>
+                <View
+                    android:layout_width="91dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_line"
+                    android:layout_marginHorizontal="16dp"/>
+
+                <!-- Relative layout that acts as button to add reviews -->
+                <RelativeLayout
+                    android:id="@+id/addReviewRelativeLayout"
+                    android:background="@drawable/rounded_button"
+                    android:layout_width="300dp"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="5dp"
+                    android:layout_gravity="center"
+                    android:layout_marginVertical="10dp"
+                    android:visibility="gone"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        style="@style/ButtonLabelStyle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="Rate this movie"/>
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        app:srcCompat="@drawable/ic_star_unfill"/>
+                </RelativeLayout>
+
+                <!-- First review of movie (if have) -->
+                <include
+                    android:id="@+id/userReviewLayout"
+                    android:visibility="gone"
+                    layout="@layout/component_user_review"/>
+
+                <!-- No review of movie (if dont have) -->
+                <TextView
+                    android:id="@+id/noUserReviewText"
+                    style="@style/NotAvailableStyle"
+                    android:layout_gravity="center"
+                    android:layout_margin="16dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No reviews available"/>
+
+                <!-- Related movie section -->
+                <TextView
+                    style="@style/FieldLabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Related movies"
+                    android:layout_marginTop="10dp"
+                    android:paddingHorizontal="16dp"/>
+                <View
+                    android:layout_width="91dp"
+                    android:layout_height="4dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="10dp"
+                    android:background="@drawable/rounded_line"
+                    android:layout_marginHorizontal="16dp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/relatedMovieRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp" />
+            </LinearLayout> <!-- for second half of body, for smoother layout animation purpose-->
+
+
+        </LinearLayout><!-- Body -->
+    </LinearLayout>  <!--  Where all components fit into -->
+</ScrollView>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/primaryBlueColor"
+    tools:context=".ui.ticket.TicketDetailActivity">
+
+    <!--  Top app bar  -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/reviewsListToolbar"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:orientation="horizontal">
+        <ImageButton
+            android:id="@+id/reviewListBackButton"
+            android:background="@drawable/back_button"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="start"
+            app:srcCompat="@drawable/img_back_30"/>
+        <TextView
+            style="@style/LabelStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User Reviews"
+            android:layout_gravity="center"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <!-- Includes ticket movie detail and concessions brought -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/reviewNestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="0dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingHorizontal="16dp"
+            android:descendantFocusability="blocksDescendants"
+            android:orientation="vertical">
+            <TextView
+                style="@style/FieldLabelStyle"
+                android:id="@+id/reviewQtyTextView"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="10dp"
+                android:text="0 review"/>
+
+            <!-- Relative layout that acts as button to add reviews -->
+            <RelativeLayout
+                android:id="@+id/addReviewRelativeLayout"
+                android:background="@drawable/rounded_button"
+                android:layout_width="300dp"
+                android:paddingHorizontal="10dp"
+                android:paddingVertical="5dp"
+                android:layout_gravity="center"
+                android:layout_marginVertical="5dp"
+                android:visibility="gone"
+                android:layout_height="wrap_content">
+                <TextView
+                    style="@style/ButtonLabelStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="Rate this movie"/>
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    app:srcCompat="@drawable/ic_star_unfill"/>
+            </RelativeLayout>
+
+            <include
+                android:visibility="gone"
+                android:id="@+id/userOwnReviewLayout"
+                layout="@layout/component_user_review"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/reviewsListRecyclerView"
+                android:nestedScrollingEnabled="false"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginVertical="20dp"/>
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</LinearLayout>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.project.moviebookingapp">
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:hardwareAccelerated="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity  android:name=".ui.home.HomeActivity"/>
+        <!-- Activity at account folder -->
+        <activity android:name=".ui.account.LoginActivity"/>
+        <activity android:name=".ui.account.SignUpActivity"/>
+        <activity android:name=".ui.account.EditProfileActivity"/>
+        <activity android:name=".ui.account.ProfileActivity"/>
+        <!--  Activity for tickets  -->
+        <activity android:name=".ui.ticket.TicketDetailActivity"/>
+        <!-- Activity for movies -->
+        <activity android:name=".ui.movie.MovieDetailActivity"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".ui.movie.MovieSeatSelectionActivity"/>
+        <activity android:name=".ui.movie.MovieConcessionActivity"/>
+        <activity android:name=".ui.movie.MovieCheckoutActivity"/>
+        <activity android:name=".ui.movie.MoviePaymentCompletedActivity"/>
+        <activity android:name=".ui.movie.ReviewsListActivity"/>
+        <activity android:name=".ui.movie.WriteReviewActivity"/>
+        <activity android:name=".ui.movie.VideoPlayerActivity"
+            android:screenOrientation="landscape"/>
+        <!-- Activitiy for concessions -->
+        <activity android:name=".ui.concession.TicketSelectionActivity"/>
+        <activity android:name=".ui.concession.ConcessionCheckoutActivity"/>
+        <activity android:name=".ui.concession.ConcessionPaymentCompletedActivity"/>
+
+        <activity android:name=".ui.home.NotificationActivity"/>
+        <!-- Activity for admins -->
+        <activity android:name=".ui.admin.AdminHomeActivity"/>
+        <activity android:name=".ui.admin.QRScannerActivity"/>
+        <activity android:name=".ui.admin.AdminRevenueActivity"/>
+
+    </application>
+
+</manifest>
